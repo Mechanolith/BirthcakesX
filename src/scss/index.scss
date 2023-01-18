@@ -1,0 +1,12 @@
+@import "../../node_modules/include-media/dist/include-media";
+@import "../../node_modules/react-responsive-carousel/lib/styles//carousel.min.css";
+@import "./breakpoints.scss";
+@import "./general.scss";
+@import "./petals.scss";
+@import "./carousel.scss";
+@import "./projects.scss";
+
+
+* {
+    box-sizing: border-box;
+}

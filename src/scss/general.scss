@@ -1,0 +1,274 @@
+@font-face {
+    font-family: 'primetime';
+    src:    url('./fonts/PRIMETIME.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'espera';
+    src:    url('./fonts/Espera/Espera-Regular.ttf') format('truetype'),
+            url('./fonts/Espera/Espera-Italic.ttf') format('truetype'),
+            url('./fonts/Espera/Espera-Bold.ttf') format('truetype'),
+            url('./fonts/Espera/Espera-BoldItalic.ttf') format('truetype');
+    font-weight: normal, bold;
+    font-style: normal, italic;
+}
+
+@font-face {
+    font-family: 'muro';
+    src:    url('./fonts/Muro/Muro.otf') format('opentype'),
+            url('./fonts/Muro/Muroslant.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal, italic;
+}
+
+@font-face {
+    font-family: 'corp';
+    src:    url('./fonts/corp_round_v1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+%default-text {
+    color: white;
+    text-shadow: 5px 3px #FA7785;
+    letter-spacing: 4px;
+    font-family: muro;
+    font-weight: bold;
+    font-style: italic;
+}
+
+h1, h2, p {
+    @extend %default-text;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10vw;
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 5em;
+    text-align: center;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn ease 5s;
+
+    h1 {
+        font-size: 140px;
+        margin: 0 0 8px 0;
+        letter-spacing: 30px;
+        text-shadow: 6px 4px #FA7785;
+
+        @media only screen and (max-width: 1450px) {
+            font-size: 7vw;
+        }
+
+        @include tablet-or-smaller {
+            font-size: 9.8vw;
+            margin: 0 0 0.2em 0;
+            letter-spacing: 2vw;
+            text-shadow: 0.5vw 0.45vw #FA7785;
+            margin-bottom: 0.15em;
+        }
+    }
+
+    h2 {
+        font-size: 60px;
+        margin: 0;
+        letter-spacing: 20px;
+
+        @media only screen and (max-width: 1450px) {
+            font-size: 3vw;
+        }
+
+        @include tablet-or-smaller {
+            font-size: 5vw;
+            margin: 0;
+            letter-spacing: 1.2vw;
+            text-shadow: 0.4vw 0.4vw #FA7785;
+        }
+    }
+}
+
+.japanese-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    @media only screen and (max-width: 1450px) {
+        max-width: 800px;
+    }
+
+    @include desktop-or-bigger {
+        //margin: -1em 0 -0.5em 0;
+    }
+}
+
+.japanese-text {
+    @extend %default-text;
+    font-family: corp;
+    font-size: 45px;
+    //position: relative;
+    //width: 100%;
+    //letter-spacing: 95px;
+    white-space: nowrap;
+
+    @media only screen and (max-width: 1450px) {
+        font-size: 2.5vw;
+    }
+
+    @include tablet-or-smaller {
+        font-size: 3vw;
+        text-shadow: 0.4vw 0.4vw #FA7785;
+        padding: 0 1vw;   
+    }
+}
+
+/*.japanese-spacer {
+    right: 15px;
+}
+
+.japanese-left {
+    
+}
+
+.japanese-right {
+    letter-spacing: 135px;
+    right: 15px;
+}*/
+
+p {
+    margin-top: 0;
+}
+
+.blurb-container {
+    @extend .hero;
+}
+
+.blurb {
+    max-width: 1162px;
+    z-index: 5;
+
+    p {
+        text-shadow: 2px 1px #FA7785;
+        font-size: 45px;
+        text-align: center;
+
+        @include tablet-or-smaller {
+            font-size: 4vw;
+            text-shadow: 1px 1px #FA7785;
+        }
+    }
+}
+
+.scroll-prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 8%;
+    animation: promptFade 5s ease 3s backwards;
+
+    p {
+        text-shadow: 2px 1px #FA7785;
+        margin: 0;
+        animation: promptHover ease-in-out 3s infinite;
+
+        @include tablet-or-smaller {
+            font-size: 4vw;
+            text-shadow: 1px 1px #FA7785;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes promptFade {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes promptHover {
+    0% {transform: translatey(0px);}
+    50% {transform: translatey(-15px);}
+    100% {transform: translatey(0px);}
+}
+
+.main-background {
+    background: radial-gradient(circle at 100% 0%, #B1D4B6 0%, #53CBBF 60%);
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    z-index: -10;
+    position: fixed;
+    top: 0;
+}
+
+.tree-branch {
+    background-image: url('../images/Cherry-Blossom.png');
+    height: 85vh;
+    width: 85vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    @include tablet-or-smaller {
+        opacity: 0.3;
+        background-size: cover;
+        background-position: -20px bottom;
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin: 5em 0;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px #FA7785;
+}
+
+$breakpoints: (
+    'mobile': 320px,
+    'tablet': 768px,
+    'desktop': 1024px,
+    "widescreen": 1600px,
+);

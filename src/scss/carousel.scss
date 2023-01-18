@@ -1,0 +1,318 @@
+.carousel-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-root {
+   width: 100%;
+   height: 100%;
+   position: relative;
+}
+
+.carousel-slider {
+    //background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .control-dots {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 0.5em 0;
+    list-style: none;
+    padding: 0;
+    z-index: 2;
+}
+
+.carousel .control-dots .dot {
+    margin: 0.5em 1em;
+    cursor: pointer;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 1em;
+    background-color: white;
+    box-shadow: 0.1em 0.1em #FA7785;
+    opacity: 1;
+    transition-duration: 100ms;
+
+    @include mobile-or-smaller {
+        margin: 0 1vw;
+        height: 5vw;
+        width: 5vw;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        background-color: #ffebed;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.carousel .control-dots .dot.selected {
+    background-color: #FA7785;
+    box-shadow: none;
+    transform: scale(0.95);
+    opacity: 1;
+}
+
+.carousel .carousel-status {
+    text-shadow: 0.5px 0.5px #FA7785;
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    margin: auto;
+    padding: 0.5em 0.5em 0.8em 0.5em;
+    background-color: rgba(#000000, 0.8);
+    width: 100px;
+    pointer-events: none;
+}
+
+.slider-wrapper.axis-horizontal {
+    //background-color: purple;
+    height: 100%;
+    width: 100%;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    //top: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.carousel .slide {
+    background-color: transparent;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.control-arrow {
+    display: none;
+}
+
+.project-carousel-container {
+    border-top: white solid 3px;
+    border-left: white solid 3px;
+    border-right: rgb(32, 32, 32) solid 2px;
+    border-bottom: rgb(32, 32, 32) solid 2px;
+    margin: 5em 0;
+    z-index: 5;
+}
+
+.project-carousel {
+    background-color: #d4d4d4;
+    background-image: url('../images/Temp-Project-BG.jpg');
+    background-color: pink;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 75vw;
+    height: 75vh;
+    min-height: 750px;
+    max-width: 1500px;
+    border: #c3c3c3 solid 5px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include tablet-or-smaller {
+        width: 90vw;
+        height: 70vh;
+    }
+
+    @include mobile-or-smaller {
+        height: 95vh;
+    }
+}
+
+.project-window-heading {
+    height: 30px;
+    width: 100%;
+    background-color: #020080;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    border-bottom: #c3c3c3 solid 4px;
+    z-index: 2;
+}
+
+.image-carousel {
+    margin: 1.5em 0;
+    height: 32%;
+    width: 40%;
+    box-shadow: 0 0 20px rgba(#c75a9a, 0.7);
+
+    @include tablet-or-smaller {
+        width: 95%;
+    }
+}
+
+.image-display {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+
+    image {
+        box-shadow: 10px 10px black;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.navigation {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em; 
+    z-index: 2; 
+    pointer-events: none;
+
+    @include tablet-or-smaller {
+        display: none;
+    }
+
+    .button {
+        pointer-events: auto;
+    }
+}
+
+.image-navigation {
+    bottom: 0;
+    padding: 1em;
+    z-index: 3;
+    display: flex;
+
+    .button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.expand-button {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    bottom: 9px;
+    right: 18px;
+    transition-duration: 100ms;
+    background: url("../images/ExpandArrows.png");
+    background-size: contain;
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+.expanded-image-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transition-duration: 350ms;
+    transition-timing-function: ease-in-out;
+
+    &.inactive {
+        top: 100vh;
+    }
+
+    &.active {
+        top: 0;
+    }
+}
+
+.expanded-image-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #4444449a;
+    z-index: 10;
+}
+
+.expanded-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 95%;
+    width: 95%;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    filter: drop-shadow(5px 10px 10px black);
+}
+
+.expanded-image-close {
+    height: 7vh;
+    width: 7vh;
+    position: absolute;
+    z-index: 12;
+    right: 10px;
+    top: 10px;
+    transition-duration: 100ms;
+    background: url("../images/Cross.png");
+    background-size: contain;
+
+    &:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+.button {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition-duration: 100ms;
+
+    &:hover {
+        transform: scale(1.05);
+        filter: hue-rotate(-20deg);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &.inactive {
+        background-color: green;
+    }
+}
+
+.button-left {
+    background: url("../images/Left\ Arrow.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.button-right {
+    background: url("../images/Right\ Arrow.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

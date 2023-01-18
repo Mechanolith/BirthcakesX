@@ -1,0 +1,115 @@
+// --------------------------------------------------------
+// Only X
+// --------------------------------------------------------
+
+@mixin tiny-only {
+    @if & {
+        @include media("<mobile") { & { @content; } }
+    } @else {
+        @include media("<mobile") { @content; }
+    }
+}
+
+@mixin mobile-only {
+    @if & {
+        @include media(">=mobile", "<tablet") { & { @content; } }
+    } @else {
+        @include media(">=mobile", "<tablet") { @content; }
+    }
+}
+
+@mixin tablet-only {
+    @if & {
+        @include media(">=tablet", "<desktop") { & { @content; } }
+    } @else {
+        @include media(">=tablet", "<desktop") { @content; }
+    }
+}
+
+@mixin desktop-only {
+    @if & {
+        @include media(">=desktop", "<widescreen") { & { @content; } }
+    } @else {
+        @include media(">=desktop", "<widescreen") { @content; }
+    }
+}
+
+@mixin widescreen-only {
+    @if & {
+        @include media(">=widescreen") { & { @content; } }
+    } @else {
+        @include media(">=widescreen") { @content; }
+    }
+}
+
+// --------------------------------------------------------
+// X or bigger
+// --------------------------------------------------------
+
+@mixin mobile-or-bigger {
+    @if & {
+        @include media(">=mobile") { & { @content; } }
+    } @else {
+        @include media(">=mobile") { @content; }
+    }
+}
+
+@mixin tablet-or-bigger {
+    @if & {
+        @include media(">=tablet") { & { @content; } }
+    } @else {
+        @include media(">=tablet") { @content; }
+    }
+}
+
+@mixin tablet-or-bigger-portrait {
+    @if & {
+        @include media(">=tablet", "portrait") { & { @content; } }
+    } @else {
+        @include media(">=tablet", "portrait") { @content; }
+    }
+}
+
+@mixin tablet-or-bigger-landscape {
+    @if & {
+        @include media(">=tablet", "landscape") { & { @content; } }
+    } @else {
+        @include media(">=tablet", "landscape") { @content; }
+    }
+}
+
+@mixin desktop-or-bigger {
+    @if & {
+        @include media(">=desktop") { & { @content; } }
+    } @else {
+        @include media(">=desktop") { @content; }
+    }
+}
+
+// --------------------------------------------------------
+// X or smaller
+// --------------------------------------------------------
+
+@mixin mobile-or-smaller {
+    @if & {
+        @include media("<tablet") { & { @content; } }
+    } @else {
+        @include media("<tablet") { @content; }
+    }
+}
+
+@mixin tablet-or-smaller {
+    @if & {
+        @include media("<desktop") { & { @content; } }
+    } @else {
+        @include media("<desktop") { @content; }
+    }
+}
+
+@mixin desktop-or-smaller {
+    @if & {
+        @include media("<widescreen") { & { @content; } }
+    } @else {
+        @include media("<widescreen") { @content; }
+    }
+}

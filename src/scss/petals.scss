@@ -1,0 +1,29 @@
+.petal-maker {
+    z-index: -1;
+}
+
+.petal {
+    position: fixed;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 4.5vw;
+    width: 4.5vw;
+    left: 120vw;    //Position will be overridden once petals start animating.
+    bottom: 120vh;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+
+    @include tablet-or-smaller {
+        height: 7vw;
+        width: 7vw;
+    }
+}
+
+.petal-type-0 {
+    background-image: url('../images/Petal 0.png');
+}
+
+.petal-type-1 {
+    background-image: url('../images/Petal 1.png');
+}
