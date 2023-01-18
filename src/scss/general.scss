@@ -273,36 +273,52 @@ p {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 90vh;
+    height: 110vh;
     width: 140vw;
-    overflow-y: visible;
+    padding-top: 15vh;
 
-    * {
+    div {
         width: 80vw;
         display: block;
         margin: auto;
+        font-size: 25px;
+    }
+
+    .invitation-modern{
+        font-family: espera;
+    }
+
+    .invitation-header {
+        font-size: 45px;
     }
 }
 
-.tree-branch {
-    //background-image: url('../images/Cherry-Blossom.png');
-    height: 85vh;
-    width: 85vw;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right bottom;
+.wizard-button {
     position: fixed;
-    bottom: 0;
+    width: 320px;
+    height: 320px;
     right: 0;
-    z-index: -1;
+    bottom: 0;
+}
 
-    @include tablet-or-smaller {
-        opacity: 0.3;
-        background-size: cover;
-        background-position: -20px bottom;
-        height: 100vh;
-        width: 100vw;
-    }
+.wizard-image {
+    background-image: url('../images/Red-Wizard.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wizard-speech {
+    background-image: url('../images/Oblivion-Button.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2px;
+    text-align: center;
+    width: 300px;
+    font-size: 17px;
 }
 
 .footer {
@@ -310,6 +326,8 @@ p {
     justify-content: center;
     margin: 5em 0;
     text-align: center;
+    position: fixed;
+    left: calc(50vw - 190px);
 }
 
 $breakpoints: (

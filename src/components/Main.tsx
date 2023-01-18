@@ -60,7 +60,10 @@ export const Main = (props: PropsWithChildren<IProps>) => {
                 <div className="invitation-wrapper">
                     <Invitation guest={guest} isYeOlde={isYeOlde}/>
                     <div className="wizard-button" onClick={TogglePlainText}>
-                        {isYeOlde ? "Speak plainly, knave!" : "Bring back the nonsense text please."}
+                        <div className="wizard-speech">
+                        {isYeOlde ? "Speak plainly, you pompous buffoon!" : "Bring back the nonsense text please."}
+                        </div>
+                        <div className="wizard-image"/>
                     </div>
                 </div>}
             </div>
