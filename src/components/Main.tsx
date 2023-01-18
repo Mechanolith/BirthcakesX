@@ -33,6 +33,7 @@ export const Main = (props: PropsWithChildren<IProps>) => {
         require('../audio/Sparkle5.wav'),
         require('../audio/Sparkle6.wav'),
     ];
+    const Slap = new Howl({src: require('../audio/Slap.wav'), volume: 0.5, preload: true});
 
     const bgmRef = useRef();
     const BGM2Audio = require('../audio/MainBGM.mp3');
@@ -77,6 +78,7 @@ export const Main = (props: PropsWithChildren<IProps>) => {
         {
             setState(EState.Wrong);
             setPassword("");
+            Slap.play();
         }
     }
 
