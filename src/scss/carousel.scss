@@ -117,7 +117,7 @@
 
 .project-carousel {
     background-color: #d4d4d4;
-    background-image: url('../images/Temp-Project-BG.jpg');
+    //background-image: url('../images/Temp-Project-BG.jpg');
     background-color: pink;
     background-size: cover;
     background-repeat: no-repeat;
@@ -217,7 +217,7 @@
     bottom: 9px;
     right: 18px;
     transition-duration: 100ms;
-    background: url("../images/ExpandArrows.png");
+    //background: url("../images/ExpandArrows.png");
     background-size: contain;
 
     &:hover {
@@ -274,7 +274,7 @@
     right: 10px;
     top: 10px;
     transition-duration: 100ms;
-    background: url("../images/Cross.png");
+    //background: url("../images/Cross.png");
     background-size: contain;
 
     &:hover{
@@ -304,14 +304,14 @@
 }
 
 .button-left {
-    background: url("../images/Left\ Arrow.png");
+    //background: url("../images/Left\ Arrow.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .button-right {
-    background: url("../images/Right\ Arrow.png");
+    //background: url("../images/Right\ Arrow.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

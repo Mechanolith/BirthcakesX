@@ -49,10 +49,10 @@ export const Main = (props: PropsWithChildren<IProps>) => {
             <PetalMaker />
             <div className="hero">
                 {state != EState.Correct ? 
-                <div className="password0wrapper">
+                <div className="password-wrapper">
                     {state == EState.Wrong ? 
-                    <div className="wrong-text">Thine passed phrase art invalid, thy scurrilous knave.</div> 
-                    : <div className="instruction-text">Entereth thines passed phrase:</div> }
+                    <div className="wrong-text instruction">{'<'} Thine passed phrase art invalid, thy scurrilous knave!  {'>'}</div> 
+                    : <div className="instruction-text instruction">{'<'} Entereth thines passed phrase {'>'}</div> }
                     <input type="password" className="password-input" onChange={UpdatePassword}/>
                     <div className="submit-button" onClick={SubmitPassword}>Submiteth</div>
                 </div> 

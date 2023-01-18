@@ -13,7 +13,7 @@ export const Invitation = (props: PropsWithChildren<IProps>) =>
     return (
         <div className="invitation">
             {props.isYeOlde ? 
-            <div className="invitation ye-olde">
+            <div className="invitation-ye-olde">
                 Mine most {guest.greetingAdjective} subject, {guest.title}, I greeteth thee! <br/><br/>
                 I come to thee this finest of dayeths to bringeth thine a most wonderful proclamation. 
                 The age of ages is upon us, the sun quaketh and the earth sundereth beneatheth ourn feet as the most birthed of cakes descendeth from on high.
@@ -43,7 +43,7 @@ export const Invitation = (props: PropsWithChildren<IProps>) =>
                 The Prince of Pancakery
             </div>
             : 
-            <div className="invitation modern">
+            <div className="invitation-modern">
                 Hey {guest.name},<br/><br/>
 
                 It's just about that time of year again (my birthday), the time for another edition of Ultra Birthcakes. Specifically, Ultra Birthcakes X.<br/><br/>

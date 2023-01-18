@@ -30,6 +30,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'oldlondon';
+    src: url('./fonts/OldLondon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     height: 100vh;
     width: 100vw;
@@ -38,24 +45,22 @@ body {
     padding: 0;
     border: 0;
     outline: 0;
+    font-family: 'oldlondon';
 }
 
 %default-text {
-    color: white;
-    text-shadow: 5px 3px #FA7785;
-    letter-spacing: 4px;
-    font-family: muro;
-    font-weight: bold;
-    font-style: italic;
+    color: black;
+    letter-spacing: 1px;
+    font-family: oldlondon;
 }
 
-h1, h2, p {
+h1, h2, p, div {
     @extend %default-text;
 }
 
 .hero {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,19 +153,6 @@ h1, h2, p {
     }
 }
 
-/*.japanese-spacer {
-    right: 15px;
-}
-
-.japanese-left {
-    
-}
-
-.japanese-right {
-    letter-spacing: 135px;
-    right: 15px;
-}*/
-
 p {
     margin-top: 0;
 }
@@ -223,7 +215,8 @@ p {
 }
 
 .main-background {
-    background: radial-gradient(circle at 100% 0%, #B1D4B6 0%, #53CBBF 60%);
+    background-image: url('../images/Door-Background.jpg');
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
@@ -236,8 +229,63 @@ p {
     top: 0;
 }
 
+.password-wrapper {
+    background-image: url('../images/Oblivion-Parchment.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 800px;
+    width: 800px;
+    padding-top: 300px;
+    flex-direction: column;
+
+    * {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .instruction {
+        font-size: 21px;
+    }
+
+    input {
+        font-size: 30px;
+    }
+
+    .submit-button {
+        font-size: 30px;
+        background-image: url('../images/Oblivion-Button.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 150px;
+        height: 57px;
+        padding-top: 10px;
+    }
+}
+
+.invitation {
+    background-image: url('../images/Oblivion-Parchment.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90vh;
+    width: 140vw;
+    overflow-y: visible;
+
+    * {
+        width: 80vw;
+        display: block;
+        margin: auto;
+    }
+}
+
 .tree-branch {
-    background-image: url('../images/Cherry-Blossom.png');
+    //background-image: url('../images/Cherry-Blossom.png');
     height: 85vh;
     width: 85vw;
     background-repeat: no-repeat;
@@ -262,8 +310,6 @@ p {
     justify-content: center;
     margin: 5em 0;
     text-align: center;
-    color: white;
-    text-shadow: 1px 1px #FA7785;
 }
 
 $breakpoints: (
