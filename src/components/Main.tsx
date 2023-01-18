@@ -23,15 +23,15 @@ export const Main = (props: PropsWithChildren<IProps>) => {
     const [state, setState] = useState<EState>(EState.Fresh);
     const [guest, setGuest] = useState<IPerson>(DefaultPerson);
     const [isYeOlde, setIsYeOlde] = useState<boolean>(true);
-    const Trumpets = require('../audio/Trumpet-Fanfare.wav');
+    const Trumpets = new Howl({src: require('../audio/Trumpet-Fanfare.wav'), volume: 0.5, preload: true});
     const Sparkles = 
     [
-        require('../audio/Sparkle1.wav'),
-        require('../audio/Sparkle2.wav'),
-        require('../audio/Sparkle3.wav'),
-        require('../audio/Sparkle4.wav'),
-        require('../audio/Sparkle5.wav'),
-        require('../audio/Sparkle6.wav'),
+        new Howl({src: require('../audio/Sparkle1.wav'), volume: 0.25, preload: true}),
+        new Howl({src: require('../audio/Sparkle2.wav'), volume: 0.25, preload: true}),
+        new Howl({src: require('../audio/Sparkle3.wav'), volume: 0.25, preload: true}),
+        new Howl({src: require('../audio/Sparkle4.wav'), volume: 0.25, preload: true}),
+        new Howl({src: require('../audio/Sparkle5.wav'), volume: 0.25, preload: true}),
+        new Howl({src: require('../audio/Sparkle6.wav'), volume: 0.25, preload: true}),
     ];
     const Slap = new Howl({src: require('../audio/Slap.wav'), volume: 0.5, preload: true});
 
@@ -47,16 +47,6 @@ export const Main = (props: PropsWithChildren<IProps>) => {
         preload: true,
     });
 
-    const PlaySound = (src, volume: number): Howl => {
-        const sound = new Howl({
-            src,
-            volume
-        });
-        sound.play();
-
-        return sound;
-    }
-
     const UpdatePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value);
     }
@@ -68,8 +58,8 @@ export const Main = (props: PropsWithChildren<IProps>) => {
             setGuest(person);
             setState(EState.Correct);
             bgmRef.current.Stop();
-            let trumpetSound = PlaySound(Trumpets, 0.5);
-            trumpetSound.on('end', () =>
+            Trumpets.play();
+            Trumpets.on('end', () =>
             {
                 BGM2.play();
             });
@@ -85,7 +75,7 @@ export const Main = (props: PropsWithChildren<IProps>) => {
     const TogglePlainText = () => {
         setIsYeOlde(!isYeOlde);
         let index = Math.floor(Math.random() * (Sparkles.length - 1));
-        PlaySound(Sparkles[index], 0.25);
+        Sparkles[index].play();
     }
     
     return (
@@ -106,7 +96,7 @@ export const Main = (props: PropsWithChildren<IProps>) => {
                     <Invitation guest={guest} isYeOlde={isYeOlde}/>
                     <div className="wizard-button" onClick={TogglePlainText}>
                         <div className="wizard-speech">
-                        {isYeOlde ? "Speak plainly, you pompous buffoon!" : "Bring back the nonsense text please."}
+                        {isYeOlde ? "Speak plainly, you pompous buffoon!" : "Speak properly, you simpleton!"}
                         </div>
                         <div className="wizard-image"/>
                     </div>

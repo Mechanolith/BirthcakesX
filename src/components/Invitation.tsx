@@ -27,7 +27,7 @@ export const Invitation = (props: PropsWithChildren<IProps>) =>
 
                 Thine's presence is demanded on the 15th dayeth of the second montheth of this <b><i>Tenth Age</i></b>, upon the sixth hour of the setting sun. 
                 Frivolities, japes, tomfooleries, and banquets shall be provided for all in celebration of this most momentus <b><i>Tenth Age</i></b>!
-                Yet those amongstest you, most verily devoutethed, may elect to take the honoureth of partaking in ourn <i>midnightth sacrament</i>!
+                Yet those amongstest you, most verily devoutethed, may elect to take the honoureth of partaking in ourn <i>midnighteth sacrament</i>!
                 Only those that can endure the crueleth embraceth of lord time himself may taste upon their lips the most succulenteth of sweet, heavenly, ambrosias thateth is... <i>The Pancakes</i>... <br/><br/>
 
                 And the peasants may cry <i>"Oh! Oh but great Prince, please take mercy upon us unwashed and unfaithful! 
