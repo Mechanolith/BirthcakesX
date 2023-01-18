@@ -51,9 +51,9 @@ export const Invitation = (props: PropsWithChildren<IProps>) =>
                 It's just about that time of year again (my birthday), the time for another edition of Ultra Birthcakes. Specifically, Ultra Birthcakes X.<br/><br/>
 
                 Now because this is the <i>tenth</i> year(!!!) in a row I've been running this, I've decided I'm gonna do something a lil special. Which is to say I'm making all of you dorks do a stupid fucking medieval pancake themed LARP with me.
-                Typically, costume-based events are the bane existance, and frankly this is no different. So if you're not into it, rest assured I won't be doing it again for another ten years.<br/><br/>
+                Typically, costume-based events are the bane of my existance, and frankly this is no different. So if you're not into it, rest assured I won't be doing it again for another ten years.<br/><br/>
 
-                If you're reading this, you should already have a role assigned ({guest.title}), so ideally that's outfit goal. But don't stress if you can't achieve that, anything vaguely in theme is fun too.
+                If you're reading this, you should already have a role assigned ({guest.title}), so ideally that's your outfit goal. But don't stress if you can't achieve that, anything vaguely in theme is fun too.
                 But most importantly, if you can't/don't want to do this at all I totally absolutely get you, that's fine too. Don't even goddamn stress. <br/><br/>
                 
                 Other than that, it's a pretty standard affair. Show up at my place at 6pm on the 15th of February.
