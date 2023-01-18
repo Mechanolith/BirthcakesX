@@ -17,7 +17,7 @@ const LayoutDecorated = (props: PropsWithChildren<IProps & WithAnalytics>) => {
 
     return (
         <Store>
-            <SEO title={"The Grand Invitation"} />
+            <SEO title={"Dawn of the Tenth Age"} />
             <Router>{children}</Router>
         </Store>
     );

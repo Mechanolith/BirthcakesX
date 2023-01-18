@@ -51,10 +51,10 @@ export const Main = (props: PropsWithChildren<IProps>) => {
                 {state != EState.Correct ? 
                 <div className="password0wrapper">
                     {state == EState.Wrong ? 
-                    <div className="wrong-text">Thine password art invalid, knave.</div> 
-                    : null}
+                    <div className="wrong-text">Thine passed phrase art invalid, thy scurrilous knave.</div> 
+                    : <div className="instruction-text">Entereth thines passed phrase:</div> }
                     <input type="password" className="password-input" onChange={UpdatePassword}/>
-                    <div className="submit-button" onClick={SubmitPassword}>Submit</div>
+                    <div className="submit-button" onClick={SubmitPassword}>Submiteth</div>
                 </div> 
                 : 
                 <div className="invitation-wrapper">
