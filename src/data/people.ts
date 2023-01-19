@@ -118,7 +118,7 @@ export const People : IPerson[] = [
     {
         name: "Lewis",
         password: "Welcome to the Pancake Plane.",
-        title: "???",
+        title: "Practical Professor",
         greetingAdjective: "valiant",
     },
 ]
